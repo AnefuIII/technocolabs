@@ -1,1 +1,1 @@
-web: setup.sh && streamlit run LinRegApp.py
+web: sh setup.sh && streamlit run LinRegApp.py

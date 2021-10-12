@@ -11,6 +11,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import math 
+#import matplotlib.pyplot as plt
 
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
@@ -49,7 +50,7 @@ def predict_close_price(Year, Month, Day, StockName, Positive, Negative, Neutral
         Day_of_week = 4
     elif Day_of_week == 'monday':
         Day_of_week = 1
-    elif Day_of_week == 'tueday':
+    elif Day_of_week == 'tuesday':
         Day_of_week = 5
     elif Day_of_week == 'wednesday':
         Day_of_week = 6
@@ -64,14 +65,29 @@ def predict_close_price(Year, Month, Day, StockName, Positive, Negative, Neutral
         
     #prediction
     prediction = model.predict([[Year, Month, Day, StockName, Positive, Negative, Neutral, TotalTweets,
-                                 Volume, Open, High, Low, Day_of_week]])
+                                 Volume, Open, High, Low, Day_of_week]])[0]
+    
+#    output = round(prediction[0])
+    
     print(prediction)
     return prediction
 
+# LOAD DATA
+def load_source(nrows): #nrows number of rows
+    source = pd.read_csv('Twitter_stock_final_dataset_new.csv', nrows = nrows)
+    return source
+
+def load_actualVpred(nrows):  #nrows number of rows
+    actualVpred = pd.read_csv('ActualVpred.csv', nrows = nrows)
+    return actualVpred
+
+# READ DATA 
+source = load_source(100)
+actualVpred = load_actualVpred(10)
 
 def main():
     
-    st.title('GROUP D')
+    st.title('TECHNOCOLABS')
     
     html_temp = """
     
@@ -82,6 +98,10 @@ def main():
     """
     
     st.markdown(html_temp, unsafe_allow_html = True)
+    
+    if st.checkbox('CLICK HERE TO SHOW THE SOURCE DATA'):
+        st.subheader('SOURCE DATA (first 100 rows)')
+        st.write(source)
     
     #Year	Month	Day	StockName	Positive	Negative	Neutral	Total Tweets
     
@@ -119,12 +139,44 @@ def main():
         result = predict_close_price(Year, Month, Day, StockName, Positive, Negative, Neutral, TotalTweets,
                                      Volume, Open, High, Low, Day_of_week)
     
-    st.success('the predicted price is {}'.format(result))
+    st.success('The predicted Close price is $ {}'.format(result))
     
     if st.button('ABOUT'):
         st.text('Predicting Volatility in Equity Markets Using Macroeconomic News (Twitter)')
         
-        
+    # MODEL DEVELOPMENT INFORMATION
+    st.subheader('MODEL DEVELOPMENT INFORMATION')
+    
+    
+    
+# =============================================================================
+#     st.write('Bar chart of close price')
+#     st.bar_chart(source['Close'])
+# =============================================================================
+    
+    #st.write('Histogram of Positive, Negative and Neutral sentiments')
+    hist = pd.DataFrame(source[:10], columns = ['Positive','Negative','Neutral'])
+    #hist.hist()
+    #st.pyplot()
+    
+    st.write('Line Chart of Positive, Negative and Neutral sentiments')
+    st.line_chart(hist)
+    
+    if st.checkbox('CLICK HERE TO SHOW THE ACTUAL VS PREDICTION DATA'):
+        st.subheader('ACTUAL VS PREDICTION DATA (first 10 rows)')
+        st.write(actualVpred)
+    
+    st.write('Line chart for Actual vs predicted prices')
+    # areachart = pd.DataFrame(actualVpred[:10], columns = ['Actual', 'Predicted'])
+    st.line_chart(actualVpred)
+    
+# =============================================================================
+#     actualVpred.plot(kind='bar',figsize=(16,10))
+#     plt.grid(which='major', linestyle='-', linewidth='0.5', color='green')
+#     plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
+#     plt.show()
+# =============================================================================
+    
 if __name__ == '__main__':
     main()
         

@@ -78,7 +78,8 @@ def load_source(nrows): #nrows number of rows
     return source
 
 def load_actualVpred(nrows):  #nrows number of rows
-    actualVpred = pd.read_csv('ActualVpred.csv', nrows = nrows)
+    url = 'https://raw.githubusercontent.com/AnefuIII/technocolabs/master/actualVpred.csv'
+    actualVpred = pd.read_csv(url, nrows = nrows)
     return actualVpred
 
 # READ DATA 

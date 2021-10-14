@@ -70,11 +70,11 @@
 [Linear Regression](eda_images/linresults.png)
 
 **DEPLOYMENT**
-<p>
-Heroku application [app](https://volatility-prediction.herokuapp.com/ "click here") </p>
 
-<p>
-Application demo video [demo](https://drive.google.com/file/d/12qFLEKkV_4HRvPf4RekAwywken2-tlsA/view?usp=sharing "click here") </p>
+Heroku application [app](https://volatility-prediction.herokuapp.com/ "click here")
+
+
+Application demo video [demo](https://drive.google.com/file/d/12qFLEKkV_4HRvPf4RekAwywken2-tlsA/view?usp=sharing "click here")
 
 
 

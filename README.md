@@ -19,11 +19,11 @@
 **WORD CLOUD**
 <P> Some wordcloud examples from our exploratory data anaysis are: </p>
 
-![Tesla stock](eda_images/wc_tsl.png)
+![Tesla stock](eda_images/wc_apple.png)
 
-![Nvidia stock](eda_images/wc_nvda.png)
+![Nvidia stock](eda_images/wc_msft.png)
 
-![Paypal stock](eda_images/wc_ppal.png)
+![Paypal stock](eda_images/wc_nvda.png)
 
 
 **PLOTS**

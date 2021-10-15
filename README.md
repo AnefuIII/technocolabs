@@ -19,18 +19,18 @@
 **WORD CLOUD**
 <P> Some wordcloud examples from our exploratory data anaysis are: </p>
 
-[Tesla stock](eda_images/wc_tsl.png)
+![Tesla stock](eda_images/wc_tsl.png)
 
-[Nvidia stock](eda_images/wc_nvda.png)
+![Nvidia stock](eda_images/wc_nvda.png)
 
-[Paypal stock](eda_images/wc_ppal.png)
+![Paypal stock](eda_images/wc_ppal.png)
 
 
 **PLOTS**
 
-[Stock count](eda_images/companies.png)
+![Stock count](eda_images/companies.png)
 
-[Sentiment count](eda_images/wc_ppal.png)
+![Sentiment count](eda_images/sentiment.png)
 
 
 **MODELLING**
@@ -67,14 +67,14 @@
 
 <p>From the analysis and comparing all the models, Linear Regression model performs best on the dataset. </p>
 
-[Linear Regression](eda_images/linresults.png)
+![Linear Regression](eda_images/linresults.png)
 
 **DEPLOYMENT**
 
-Heroku application [app](https://volatility-prediction.herokuapp.com/ "click here")
+Heroku application [Click here](https://volatility-prediction.herokuapp.com/ "click here")
 
 
-Application demo video [demo](https://drive.google.com/file/d/12qFLEKkV_4HRvPf4RekAwywken2-tlsA/view?usp=sharing "click here")
+Application demo video [Click here](https://drive.google.com/file/d/12qFLEKkV_4HRvPf4RekAwywken2-tlsA/view?usp=sharing "click here")
 
 
 

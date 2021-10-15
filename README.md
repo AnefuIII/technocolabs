@@ -14,6 +14,10 @@
 <p>On June 26, 2015, months of debt negotiation between the Greek government, headed by Prime Minister Alexis Tsipras, and its creditors, including the IMF and fellow Eurozone countries, broke off abruptly. Tsipras announced a snap referendum regarding the terms of the pending bailout. By the following morning, S&P500 was down significantly.  As political and economic uncertainty grew in Europe, investors across the world were moving their funds away from risky assets that could be negatively affected by a Greek default, and towards safer assets. Days later, when the Greek situation had ’resolved’, the process reversed as equities rallied..</p>
 <p>These market movements are not uncommon; just weeks later, crisis erupted in the Chinese equity markets, and asset values were responding to the uncertainty this provoked. </p>
 
+***TYPE OF MACHINE LEARNING PROBLEM - Regression problem***
+
+***METRICS USED - Root mean squared error, r2_score, mean absolute error***
+
 ### **EXPLORATORY DATA ANALYSIS**
 
 **WORD CLOUD**
